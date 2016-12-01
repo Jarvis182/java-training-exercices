@@ -13,4 +13,8 @@ public interface Flaggable {
     public boolean isFlagged();
     abstract String[] getFlags();
 
+    
+    
+    void addFlag (String reason);
 }
+

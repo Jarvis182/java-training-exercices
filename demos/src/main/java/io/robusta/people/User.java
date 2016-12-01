@@ -7,12 +7,26 @@ public class User /* extends Object */{
 
     public String name;
     String email;
-    int age;
+   private int age;
     Address adress;
 
-    @Override // override Object.toString()
+    public User(String name, String email) {
+		super();
+		this.name = name;
+		this.email = email;
+	}
+
+	@Override // override Object.toString()
     public String toString() {
-        return this.name+" is "+age+" years old";
+        return this.name+" is "+getAge()+" years old";
     }
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 
 }

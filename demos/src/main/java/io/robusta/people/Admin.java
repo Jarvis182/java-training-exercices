@@ -8,7 +8,7 @@ public class Admin extends User {
     private String directory;
 
     public Admin(String name) {
-        this.name = "name";
+    	super(name, name+"@aelion.fr");
         this.directory = "/home/"+this.name;
     }
 
