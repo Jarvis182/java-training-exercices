@@ -1,5 +1,6 @@
 package io.robusta.files;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,18 +13,20 @@ public class ReadFileApplication {
 
 	public static void main(String[] args) {
 
+		if (args == null || args.length != 2) {
+			System.out.println("il faut exactement deux arguments");
+
+			return;
+		}
+
 		ReadFileApplication app = new ReadFileApplication();
 		try {
 			app.readFile(args[0], args[1]);
-		} catch (IOException e) {
+		} catch (FileNotFoundException e) {
 			System.out.println("Oups, le frichier" + args[0] + "n'existe pas");
+		} catch (Exception e) {
+			System.out.println("Oups, aie aie aie I Fucked it up! GAME OVER");
 		}
-
-	}catch(
-
-	IOException e)
-	{
-		System.out.println("Oups, aie aie aie I Fucked it up! GAME OVER");
 	}
 
 	void readFile(String argumentFile, String output) throws IOException {
